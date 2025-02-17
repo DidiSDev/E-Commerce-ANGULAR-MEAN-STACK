@@ -1,0 +1,108 @@
+[{
+  "_id": {
+    "$oid": "67852d5b2142308ff6453b91"
+  },
+  "nombre": "Arma1",
+  "descr": "Arma1",
+  "precio": 1,
+  "stock": 1,
+  "imagen": "/assets/Arma1.webp",
+  "categoria": "Valorant",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67852d782142308ff6453b94"
+  },
+  "nombre": "Skin1",
+  "descr": "Skin1",
+  "precio": 50,
+  "stock": 40,
+  "imagen": "/assets/skin1.jpg",
+  "categoria": "League of Legends",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67852da72142308ff6453ba0"
+  },
+  "nombre": "Arma2",
+  "descr": "Arma2",
+  "precio": 20,
+  "stock": 8,
+  "imagen": "/assets/Arma2.webp",
+  "categoria": "Valorant",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67852db32142308ff6453ba3"
+  },
+  "nombre": "Skin2",
+  "descr": "Skin2",
+  "precio": 35,
+  "stock": 33,
+  "imagen": "/assets/skin2.webp",
+  "categoria": "League of Legends",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "678533b22142308ff6453ba9"
+  },
+  "nombre": "Arma3",
+  "descr": "Arma3",
+  "precio": 7,
+  "stock": 5,
+  "imagen": "/assets/Arma3.webp",
+  "categoria": "Valorant",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "678537122142308ff6453bac"
+  },
+  "nombre": "Skin3",
+  "descr": "Skin3",
+  "precio": 3,
+  "stock": 1,
+  "imagen": "/assets/skin3.webp",
+  "categoria": "League of Legends",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67853b622142308ff6453baf"
+  },
+  "nombre": "Arma4",
+  "descr": "Arma4",
+  "precio": 25,
+  "stock": 40,
+  "imagen": "/assets/Arma4.webp",
+  "categoria": "Valorant",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67853b6f2142308ff6453bb2"
+  },
+  "nombre": "Skin4",
+  "descr": "Skin4",
+  "precio": 4,
+  "stock": 4,
+  "imagen": "/assets/skin4.webp",
+  "categoria": "League of Legends",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67853ba12142308ff6453bb5"
+  },
+  "nombre": "Skin5",
+  "descr": "Skin5",
+  "precio": 200000,
+  "stock": 200000,
+  "imagen": "/assets/skin5.webp",
+  "categoria": "League of Legends",
+  "__v": 0
+}]

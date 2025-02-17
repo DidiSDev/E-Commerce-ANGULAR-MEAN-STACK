@@ -1,0 +1,2 @@
+.env no es necesario pero es recomendado para cambiar configuuraciones sin
+tener que modificar el código directamente.

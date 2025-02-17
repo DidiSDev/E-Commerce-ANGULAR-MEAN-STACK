@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "67852d172142308ff6453b79"
+  },
+  "nombre": "admin",
+  "email": "admin@admin.admin",
+  "password": "admin",
+  "admin": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67853bdc2142308ff6453bc6"
+  },
+  "nombre": "cl",
+  "email": "cl",
+  "password": "cl",
+  "admin": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67868e365536fbf3870c1093"
+  },
+  "nombre": "PR",
+  "email": "PR",
+  "password": "PR",
+  "admin": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67869171b53963d2949872f2"
+  },
+  "nombre": "salesianos",
+  "email": "sa@sa.sa",
+  "password": "salesianos",
+  "admin": false,
+  "__v": 0
+}]
