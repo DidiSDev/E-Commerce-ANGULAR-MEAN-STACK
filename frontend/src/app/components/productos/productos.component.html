@@ -1,0 +1,53 @@
+<!-- COMBINAMOS VISTA DE ADMIN, DE CLIENTE O DE NINGUNO -->
+
+
+
+<div class="productos-container">
+  <h2 class="titulo-productos">Nuestros productos</h2>
+  
+  <!-- Botón para añadir producto, solo visible para admins, es decir, si "isAdmin es true" -->
+  <button *ngIf="isAdmin" class="btn-add" (click)="AlternarYAgregar()">
+    {{ productosService.productoSeleccionado && productosService.productoSeleccionado._id ? 'Actualizar producto' : 'Añadir producto' }}
+  </button>
+
+  <!-- 1- VALIDAMOS ADMIN, tenemos un botón AlternarYAgregar que nos activa el interruptor de abajo, que es simplemente para mostrar el formulario o no
+   si pulsamos sobre el botón "Añadir Producto" se activará el interruptor que muestra el formulario para el alta de productos:
+    this.interruptor = !this.interruptor;, además dentro de esta función LIMPIAMOS LOS CAMPOS si el formulario se cierra..
+    
+    2- Respecto a esta línea: {{ productosService.productoSeleccionado && productosService.productoSeleccionado._id ? 'Actualizar Producto' : 'Añadir Producto' }}
+    Validamos que productoSeleccionado existe, así no accedemos a "null" o "undefined"
+    2.1 -> consultamos si tiene ._id, SI NO LA TIENE, se mostrará "Añadir producto", pero si la tiene, se mostrará "Actualizar producto"
+    Ambas son válidas.
+
+    ¿Por qué ponemos primero 'Actualizar producto' y : después 'Añadir producto'? porque la primera opción es SI AMBAS SON VERDADERAS, en caso contrario
+    o bien no hay producto o no hay _id o ninguna de las dos, es decir, será false y se mostrará -> 'Añadir producto'
+
+    3- VAMOS A FORMULARIO ALTA: Tiene un formulario que al recogerse, en su .ts se llama a la función de productos.service.ts de dar de alta, lo explicamos ahí
+
+    -->
+
+  <!-- Formulario de alta de producto, visible según showAddProductForm -->
+  <div *ngIf="interruptor">
+    <app-formulario-alta (productoAnadido)="onProductoAnadido()"></app-formulario-alta>
+  </div>
+  <!-- 7- Aqui recogemos productoAnadido desde formulario-alta.ts (CON EL EMIT TRAS DAR DE ALTA O ACTUALIZAR) y nos vamos a la función-> -->
+
+  <!-- Cuadrícula de productos
+   
+  11- Los productos se muestran todos con @Input desde el componente "productos" para enviar si hay un admin conectado, si hay un producto y cual es
+  y si estamos login o no (si no lo estamos no podemos ni hacer CRUD ni añadir al carrito)
+  
+  12- De allí traemos los botones editar, eliminar o agregar al carrito (en función de si estamos login, si somos admin o no) y se mostrarán 
+  aquí. No tiene más funcionalidad que actuar como módulo de los productos, VAMOS ALLÍ -> -->
+  <div class="grid-container">
+    <app-producto
+      *ngFor="let producto of productos"
+      [producto]="producto"
+      [isAdmin]="isAdmin"
+      [isLoggedIn]="isLoggedIn"
+      (editar)="editarProducto($event)"
+      (eliminar)="eliminarProducto($event)"
+      (agregarAlCarrito)="agregarAlCarrito($event)"
+    ></app-producto>
+  </div>
+</div>

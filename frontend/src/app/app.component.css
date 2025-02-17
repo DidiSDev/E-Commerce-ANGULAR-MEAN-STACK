@@ -1,0 +1,36 @@
+/* app.component.css */
+
+/* ESTILOS SECUNDARIOS (PPALES EN styles.css, Y TERCIARIOS EN CSS DE CADA COMPONENTE) */
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px); 
+}
+
+.contenido {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+}
+
+.barra-izquierda, .barra-derecha {
+  width: 20%;
+  background-color: #d3dbe2;
+  padding: 15px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.seccion-productos {
+  width: 60%;
+  /* Eliminamos display: grid y grid-template-columns para evitar conflictos */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  margin-right: 40px;
+}

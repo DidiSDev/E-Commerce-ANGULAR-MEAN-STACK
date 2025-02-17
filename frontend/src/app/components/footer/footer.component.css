@@ -1,0 +1,18 @@
+/* src/app/components/footer/footer.component.css */
+footer {
+  width: 100%;
+  background-color: #2d3e50; /* Mismo color que el header para armonía */
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 1rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fijo al fondo de la página */
+  bottom: 0;
+  left: 0;
+}
+
+footer p {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Asegúrate de usar la misma fuente que el resto */
+}

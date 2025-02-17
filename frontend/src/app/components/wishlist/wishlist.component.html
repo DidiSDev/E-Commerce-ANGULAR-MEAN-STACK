@@ -1,0 +1,21 @@
+<div class="wishlist-container">
+    <h2>Mi lista de deseados</h2>
+    <div *ngIf="wishlist.length === 0">
+      <p>No tienes productos en tu lista de deseados.</p>
+    </div>
+    <div *ngIf="wishlist.length > 0">
+      <ul>
+        <li *ngFor="let item of wishlist">
+          <img [src]="item.productoId.imagen" alt="{{ item.productoId.nombre }}">
+          <div class="detalle-producto">
+            <span class="nombre">{{ item.productoId.nombre }}</span>
+            <span class="precio">{{ item.productoId.precio | currency }}</span>
+          </div>
+          <button (click)="eliminar(item.productoId._id)" class="btn-eliminar-wishlist">
+            Eliminar
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

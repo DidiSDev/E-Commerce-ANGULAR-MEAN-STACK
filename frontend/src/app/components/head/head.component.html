@@ -1,0 +1,22 @@
+<!-- head.component.html -->
+<header class="header-content">
+  <div class="brand">
+    <img class="logo" src="assets/riot.png" alt="Logo_Riot">
+    <h1>Riot Games</h1>
+  </div>
+  <nav class="menu">
+    <a routerLink="/">Inicio</a>
+    <a routerLink="/productos">Productos</a>
+    <a routerLink="/compras">Mis Compras</a>
+    <a routerLink="/wishlist" class="wishlist-link" *ngIf="isLoggedIn">Lista de Deseados</a>
+
+    <!-- LOGIN A LA DERECHA DEL TODO-->
+
+    <!-- EN CASO DE HACER LOGIN SE DEBE CAMBIAR LA VENTANA A LOGOUT Y PERMITIR DESCONECTAR.. -->
+    <a routerLink="/login" class="login-link" *ngIf="!isLoggedIn">Login</a>
+    <div *ngIf="isLoggedIn" class="user-info">
+      <span>{{ username }}</span>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </nav>
+</header>

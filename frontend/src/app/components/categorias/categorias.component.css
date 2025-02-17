@@ -1,0 +1,88 @@
+/* categorias.component.css */
+
+/* Importación de la fuente Orbitron */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Estilos para la navegación */
+nav {
+  background-color: #0d0d0d; /* Fondo oscuro */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; /* Bordes redondeados para la nav */
+  max-width: 300px; /* Ancho máximo para centrar mejor */
+  margin: 0 auto; /* Centrar la nav horizontalmente */
+}
+
+/* Lista sin estilos y en disposición vertical */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* Cambiar a columna para apilar verticalmente */
+  align-items: center; /* Centrar los botones horizontalmente */
+  gap: 15px; /* Espacio entre los botones */
+  margin: 0;
+  padding: 0;
+}
+
+/* Opcional: Estilos para los elementos de la lista */
+li {
+  width: 100%; /* Hacer que los botones ocupen todo el ancho de la nav */
+}
+
+/* Estilos para los botones */
+button {
+  width: 100%; /* Hacer que los botones ocupen todo el ancho disponible */
+  background-color: #1a1a1a; /* Fondo oscuro de los botones */
+  color: #00ffea; /* Texto en color neón */
+  border: 2px solid #00ffea;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif; /* Aplicación de la fuente */
+  text-align: center; /* Centrar el texto */
+}
+
+/* Efecto de brillo al pasar el ratón */
+button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(0, 255, 234, 0.2);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+button:hover::before {
+  top: 150%;
+  left: 150%;
+}
+
+button:hover {
+  background-color: #00ffea;
+  color: #0d0d0d;
+  box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 40px #00ffea;
+}
+
+/* Animación de pulsación al hacer clic */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 600px) {
+  nav {
+    max-width: 90%; /* Ajustar el ancho en pantallas pequeñas */
+  }
+
+  button {
+    font-size: 18px;
+    padding: 14px 20px;
+  }
+}

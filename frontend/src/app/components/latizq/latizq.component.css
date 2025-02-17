@@ -1,0 +1,57 @@
+.latizq {
+    width: 100%; /* Usará todo el ancho disponible */
+    max-width: 18%; /* Asegura que no supere el 18% */
+    background-color: var(--color-secondary);
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 60px; /* Ajusta según la altura de tu header */
+    left: 10;
+    height: calc(100% - 60px); /* Altura total menos el header */
+    overflow-y: auto;
+  }
+  
+  .categorias-titulo {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 1.5rem; /* Ajusta el tamaño según prefieras */
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 5px;
+  }
+  
+  .riot-news {
+    margin-top: 20px;
+  }
+  
+  .riot-news h4 {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .news-item {
+    margin-bottom: 15px;
+  }
+  
+  .news-item h5 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .news-item a {
+    text-decoration: none;
+    color: var(--color-link);
+  }
+  
+  .news-item a:hover {
+    text-decoration: underline;
+  }
+  
+  .news-item p {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+  

@@ -1,0 +1,59 @@
+<div class="compras-container">
+  <h2>Mis Compras</h2>
+  
+  <!-- Mensaje cuando no hay compras -->
+  <div *ngIf="compras.length === 0">
+    <p>No tienes compras realizadas.</p>
+  </div>
+  
+  <!-- Tabla de compras -->
+  <div *ngIf="compras.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Compra</th>
+          <th>Fecha</th>
+          <th>Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iterar sobre cada compra -->
+        <ng-container *ngFor="let compra of compras; let i = index">
+          <!-- Fila principal de la compra -->
+          <tr>
+            <td>Compra {{i + 1}}</td>
+            <td>{{ compra.fecha | date:'short' }}</td>
+            <td>{{ compra.total | currency }}</td>
+            <td>
+              <button class="btn-detalles" (click)="Detalles(i)">
+                {{ selectedCompraIndex === i ? 'Ocultar' : 'Detalles' }}
+              </button>
+            </td>
+          </tr>
+          
+          <!-- Fila de detalles de la compra -->
+          <tr *ngIf="selectedCompraIndex === i">
+            <td colspan="4" class="detalles-compra">
+              <h3>Productos Comprados</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Cantidad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let producto of compra.productos">
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

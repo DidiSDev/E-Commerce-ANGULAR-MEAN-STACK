@@ -1,0 +1,42 @@
+/* productos.component.css */
+.productos-container {
+  padding: 20px;
+  background: #1e1e2f;
+  border-radius: 10px;
+  width: 100%; /* Asegura que ocupe todo el espacio disponible */
+  margin: 0 auto;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+.titulo-productos {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.btn-add {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-add:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px;
+  width: 100%; /* Ocupa todo el espacio disponible */
+}

@@ -1,0 +1,19 @@
+/* inicio.component.css */
+.inicio-container {
+    padding: 40px;
+    background: #121212;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  

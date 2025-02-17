@@ -1,0 +1,33 @@
+<div class="producto-card"
+     [ngClass]="{'poco-stock': producto.stock <= 5 && producto.stock > 0, 'agotado': producto.stock === 0}">
+  <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="producto-imagen">
+  <h3>{{ producto.categoria }}</h3>
+  <h4>
+    {{ producto.nombre }} -
+    <span *ngIf="producto.stock > 0">Stock: {{ producto.stock }}</span>
+    <span *ngIf="producto.stock === 0">AGOTADO</span>
+  </h4>
+  <!-- VALORACIÓN MEDIA -->
+  <div class="promedio-valoracion" *ngIf="isLoggedIn">
+    <p style="color: chartreuse;">Valoración: {{ promedio | number:'1.1-1' }} / 5 ({{ totalValoraciones }} valoraciones)</p>
+  </div>
+  <p>{{ producto.descr }}</p>
+  <p class="precio">{{ producto.precio | currency }}</p>
+  <div class="acciones">
+    <button *ngIf="isAdmin" class="btn-edit" (click)="onEditar()">Editar</button>
+    <button *ngIf="isAdmin" class="btn-delete" (click)="onEliminar()">Eliminar</button>
+    <button *ngIf="!isAdmin && isLoggedIn && producto.stock > 0" class="btn-add-cart" (click)="onAgregarAlCarrito()">
+      Añadir al Carrito
+    </button>
+    <button *ngIf="isLoggedIn" class="btn-wishlist" (click)="onAgregarWishlist()">
+      Añadir a Deseados
+    </button>
+    <!--APARECE EL BOTÓN SI SE CUMPLENN LAS 2 CONDICIONES -->
+    <button *ngIf="mostrarBotonValoracion" class="btn-crear-valoracion" (click)="abrirCrearValoracion()">
+      Enviar Valoración
+    </button>
+  </div>
+  <div>
+    <p *ngIf="interruptor">La cantidad de clientes que ha comprado el producto {{ producto.nombre }} es: {{ cantidadClientes.size }}</p>
+  </div>
+</div>

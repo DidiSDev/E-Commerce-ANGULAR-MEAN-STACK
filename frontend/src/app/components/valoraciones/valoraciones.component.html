@@ -1,0 +1,53 @@
+<div class="compras-container">
+    <h2>Todas las Valoraciones</h2>
+    
+    <!-- SI NO HAY VALORACIONES -->
+    <div *ngIf="valoraciones.length === 0">
+      <p>No hay valoraciones disponibles.</p>
+    </div>
+    
+    <!-- SI HAY VALORACIONES -->
+    <div *ngIf="valoraciones.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Cliente</th>
+            <th>Producto</th>
+            <th>Estrellas</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let valoracion of valoraciones; let i = index">
+            <tr>
+              <td>{{ i + 1 }}</td>
+              <td>{{ valoracion.clienteId?.nombre || 'N/A' }}</td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <img *ngIf="valoracion.productoId?.imagen" [src]="valoracion.productoId.imagen" alt="{{ valoracion.productoId.nombre }}" width="50" height="50" style="border-radius: 5px;">
+                  <span>{{ valoracion.productoId?.nombre }}</span>
+                </div>
+              </td>
+              <td [ngClass]="{'rojo': valoracion.estrellas < 2.5, 'amarillo': valoracion.estrellas === 2.5, 'verde': valoracion.estrellas > 2.5}">
+                {{ valoracion.estrellas }}
+              </td>
+              <td>
+                <button class="btn-detalles" (click)="toggleDetalles(i)">
+                  {{ selectedValoracionIndex === i ? 'Ocultar' : 'Detalles' }}
+                </button>
+              </td>
+            </tr>
+            
+            <tr *ngIf="selectedValoracionIndex === i">
+              <td colspan="5" class="detalles-compra">
+                <h3>Comentario</h3>
+                <p>{{ valoracion.comentario }}</p>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,123 @@
+/* head.component.css */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1a1a2e; /* Color más oscuro para temática gaming */
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  font-family: 'Press Start 2P', cursive; /* Fuente de estilo gaming */
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #ff5722; /* Color vibrante para resaltar */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+nav.menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+nav.menu a:hover {
+  text-decoration: none;
+  background-color: #ff5722;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  h1 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+
+  nav.menu {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+
+  nav.menu a {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  nav.menu a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}
+
+.logo {
+  width: 50px;
+  height: 45px;
+}
+
+/* Estilo del contenedor del usuario y botón */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaciado entre el nombre y el botón */
+}
+
+.user-info span {
+  font-weight: bold;
+  color: #ffffff; /* Mantén el color blanco para coherencia */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.user-info button {
+  background-color: #ff5722; /* Color vibrante para coherencia */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  font-family: 'Press Start 2P', cursive; /* Fuente de estilo gaming */
+}
+
+.user-info button:hover {
+  background-color: #e64a19; /* Un tono más oscuro al pasar el mouse */
+  transform: scale(1.05);
+}
+
+.user-info button:active {
+  background-color: #d84315; /* Aún más oscuro cuando se presiona */
+}

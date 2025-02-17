@@ -1,0 +1,26 @@
+<div style="text-align: center;">
+  <!--Carrito -->
+  <h3 style="background-color: red; border-radius: 20px; width: 50%; margin: 0 auto 10px auto;">CARRITO</h3>
+  <div style="text-align: center; background-color: #1a1a2e; padding: 20px; position: relative;">
+    <a routerLink="/carrito" [class.disabled]="!isLoggedIn" style="position: relative; display: inline-block;">
+      <img src="assets/carrito.png" alt="carrito" style="width: 100px; height: 100px;">
+      <span *ngIf="totalItems > 0" class="cart-count">{{ totalItems }}</span>
+    </a>
+    <p *ngIf="totalSum > 0" class="cart-total">Total: {{ totalSum | currency }}</p>
+  </div>
+
+  <!--TOP 5 Deseados -->
+  <div class="wishlist-section">
+    <h3>TOP 5 Deseados</h3>
+    <ul class="wishlist-list">
+      <li *ngFor="let item of topDeseados" class="wishlist-item">
+        <img [src]="item.imagen" alt="{{ item.nombre }}">
+        <span>{{ item.nombre }} ({{ item.count }} deseos)</span>
+      </li>
+    </ul>
+  </div>
+
+  <div style="text-align: center;">
+    <button class="ver-todas-btn" (click)="irAVerTodasValoraciones()">Ver todas las valoraciones</button>
+  </div>
+</div>

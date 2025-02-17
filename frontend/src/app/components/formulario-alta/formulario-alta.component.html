@@ -1,0 +1,34 @@
+<div class="container">
+  <!-- darAlta() SE ACTIVA AL PULSAR SOBRE 'Dar de Alta' -->
+  <form #productoForm="ngForm" (ngSubmit)="darAlta()"> 
+    <div class="row">
+      <div class="formu">
+        <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre" required />
+      </div>
+      <div class="formu">
+        <input type="text" name="descr" placeholder="Descripción" [(ngModel)]="descr" required />
+      </div>
+      <div class="formu">
+        <input type="number" name="cant" placeholder="Stock" [(ngModel)]="cantidad" required />
+      </div>
+      <div class="formu">
+        <input type="number" name="precio" placeholder="Precio" [(ngModel)]="precio" required />
+      </div>
+      <div class="formu">
+        <input type="text" name="imagen" placeholder="Imagen URL" [(ngModel)]="foto" required />
+      </div>
+      <div class="formu">
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria" [(ngModel)]="categoria" required>
+          <option value="League of Legends">League of Legends</option>
+          <option value="Valorant">Valorant</option>
+        </select>
+      </div>
+      <div class="contbtn">
+        <button type="submit" class="alta">
+          {{ productoId ? 'Actualizar Producto' : 'Dar de alta' }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

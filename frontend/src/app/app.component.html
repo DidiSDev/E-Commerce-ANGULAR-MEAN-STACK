@@ -1,0 +1,28 @@
+<!-- app.component.html -->
+<app-head></app-head>
+
+<!-- CONTENEDOR DE IZQ, CENTRO Y DCHA -->
+<div class="contenedor-principal">
+
+  <!--BARRAS LATERALES-->
+  <div class="contenido">
+    <aside class="barra-izquierda">
+      <!-- ESPACIO Q SINO EL HEADER SE COME LAS LETRAS LATERALES -->
+      <br>
+      <app-latizq></app-latizq>
+    </aside>
+
+    <section class="seccion-productos">
+      <!-- PUNTO DE INSERCION DE LAS RUTAS -->
+      <router-outlet></router-outlet>
+    </section>
+
+    <aside class="barra-derecha">
+      <br>
+      <app-latder></app-latder>
+    </aside>
+  </div>
+
+</div>
+<!--FOOTER -->
+<app-footer></app-footer>

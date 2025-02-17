@@ -1,0 +1,96 @@
+.compras-container {
+    padding: 20px;
+    background: #1e1e2f;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00c853;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #2a2a40;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+  }
+  
+  th {
+    background-color: #3a3a5a;
+    font-size: 14px;
+  }
+  
+  td {
+    font-size: 14px;
+  }
+  
+  .btn-detalles {
+    background-color: #00b0ff;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .btn-detalles:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00b0ff;
+  }
+  
+  .detalles-compra {
+    background-color: #3a3a5a;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .detalles-compra h3 {
+    margin-bottom: 10px;
+    color: #00c853;
+  }
+  
+  .detalles-compra table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .detalles-compra th, .detalles-compra td {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+  }
+  
+  .detalles-compra th {
+    background-color: #4a4a6a;
+  }
+  
+
+  .rojo {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .amarillo {
+    color: #FFD700;
+    font-weight: bold;
+  }
+  
+  .verde {
+    color: green;
+    font-weight: bold;
+  }
+  

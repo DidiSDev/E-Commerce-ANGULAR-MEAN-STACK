@@ -1,0 +1,40 @@
+<!-- carrito.component.html -->
+<div class="carrito-container">
+  <h3>Mi Carrito</h3>
+  <div *ngIf="cartItems.length === 0">
+    <p>No tienes productos en el carrito.</p>
+  </div>
+  <div *ngIf="cartItems.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Subtotal</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems">
+          <td *ngIf="item.producto._id">
+            {{ item.producto.nombre }}
+          </td>
+          
+          <td>{{ item.cantidad }}</td>
+          <td>{{ item.producto.precio | currency }}</td>
+          <td>{{ (item.producto.precio * item.cantidad) | currency }}</td>
+          <td>
+            <button class="btn-remove" (click)="eliminarUnidad(item.producto._id!)">Eliminar una unidad</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cart-summary">
+      <p>Total: {{ total | currency }}</p>
+      <button class="btn-clear" (click)="limpiarCarrito()">Vaciar Carrito</button>
+      <!-- FC -->
+      <button class="btn-checkout" (click)="hacerCompra()">Realizar Compra</button>
+    </div>
+  </div>
+</div>

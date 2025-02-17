@@ -1,0 +1,36 @@
+<br>
+<div *ngIf="cartItems.length>0">
+    <ul *ngFor="let item of cartItems">
+        <li>{{item.producto.nombre}} - {{item.cantidad}}</li>
+    </ul>
+</div>
+<br><br>
+<br>
+<br>
+<h1>CARRITO DE TODOS</h1>
+
+<div *ngIf="carritos.length > 0; else noCarritos">
+  <div *ngFor="let carrito of carritos; let i = index">
+    <h3>Carrito del Usuario: {{ carrito.idUsuario }}</h3>
+    <ul *ngIf="carrito.items && carrito.items.length > 0; else carritoVacio">
+      <li *ngFor="let item of carrito.items">
+        <strong>{{ item.producto.nombre }}</strong> - Cantidad: {{ item.cantidad }}
+        <br />
+        Precio: {{ item.producto.precio | currency }}
+      </li>
+    </ul>
+    <ng-template #carritoVacio>
+      <p>Este carrito está vacío.</p>
+    </ng-template>
+    <p>Subtotal: {{ subtotales[i] | currency }}</p>
+  </div>
+  <h3>Total Global: {{ totalGlobal | currency }}</h3>
+</div>
+
+<ng-template #noCarritos>
+  <p>No hay carritos disponibles.</p>
+</ng-template>
+
+
+
+  
